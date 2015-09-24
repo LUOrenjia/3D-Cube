@@ -1,0 +1,246 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*动画*/
+
+.animation-cube-spin {
+    -webkit-animation: cube-spin 5s linear 0s infinite;
+    -moz-animation: cube-spin 5s linear 0s infinite;
+    -o-animation: cube-spin 5s linear 0s infinite;
+    -ms-animation: cube-spin 5s linear 0s infinite;
+    animation: cube-spin 5s linear 0s infinite;
+}
+
+@-webkit-keyframes cube-spin {
+    from {
+        -webkit-transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    to {
+        -webkit-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes cube-spin {
+    from {
+        -moz-transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    to {
+        -moz-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+@-o-keyframes cube-spin {
+    from {
+        -o-transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    to {
+        -o-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+@-ms-keyframes cube-spin {
+    from {
+        -ms-transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    to {
+        -ms-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+@keyframes cube-spin {
+    from {
+        transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    to {
+        transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+
+/*平铺的背景图片*/
+
+body {
+    background-image: url("../images/bg.jpg");
+    background-repeat: repeat;
+}
+
+
+/*设置魔方容器*/
+
+.container .cube-wrap {
+    margin: 200px auto;
+    -webkit-perspective: 1000px;
+    -webkit-perspective-origin: 50% 100px;
+    -moz-perspective: 1000px;
+    -moz-perspective-origin: 50% 100px;
+    -o-perspective: 1000px;
+    -o-perspective-origin: 50% 100px;
+    -ms-perspective: 1000px;
+    -ms-perspective-origin: 50% 100px;
+    perspective: 1000px;
+    perspective-origin: 50% 100px;
+}
+
+.container .cube-wrap .cube {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    -webkit-transform-origin: 100px 100px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-origin: 100px 100px;
+    -moz-transform-style: preserve-3d;
+    -o-transform-origin: 100px 100px;
+    -o-transform-style: preserve-3d;
+    -ms-transform-origin: 100px 100px;
+    -ms-transform-style: preserve-3d;
+    transform-origin: 100px 100px;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+/*放置魔方的各个面*/
+
+.container .cube-wrap .cube .pane {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 5px;
+}
+
+.container .cube-wrap .cube .back {
+    -webkit-transform: translateZ(-100px) rotateY(180deg);
+    -moz-transform: translateZ(-100px) rotateY(180deg);
+    -o-transform: translateZ(-100px) rotateY(180deg);
+    -ms-transform: translateZ(-100px) rotateY(180deg);
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.container .cube-wrap .cube .right {
+    -webkit-transform: rotateY(90deg) translateX(100px);
+    -moz-transform: rotateY(90deg) translateX(100px);
+    -o-transform: rotateY(90deg) translateX(100px);
+    -ms-transform: rotateY(90deg) translateX(100px);
+    transform: rotateY(90deg) translateX(100px);
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    -o-transform-origin: right center;
+    -ms-transform-origin: right center;
+    transform-origin: right center;
+}
+
+.container .cube-wrap .cube .left {
+    -webkit-transform: rotateY(-90deg) translateX(-100px);
+    -moz-transform: rotateY(-90deg) translateX(-100px);
+    -o-transform: rotateY(-90deg) translateX(-100px);
+    -ms-transform: rotateY(-90deg) translateX(-100px);
+    transform: rotateY(-90deg) translateX(-100px);
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.container .cube-wrap .cube .top {
+    -webkit-transform: rotateX(90deg) translateY(-100px);
+    -moz-transform: rotateX(90deg) translateY(-100px);
+    -o-transform: rotateX(90deg) translateY(-100px);
+    -ms-transform: rotateX(90deg) translateY(-100px);
+    transform: rotateX(90deg) translateY(-100px);
+    -webkit-transform-origin: center top;
+    -moz-transform-origin: center top;
+    -o-transform-origin: center top;
+    -ms-transform-origin: center top;
+    transform-origin: center top;
+}
+
+.container .cube-wrap .cube .bottom {
+    -webkit-transform: rotateX(90deg) translateY(100px);
+    -moz-transform: rotateX(90deg) translateY(100px);
+    -o-transform: rotateX(90deg) translateY(100px);
+    -ms-transform: rotateX(90deg) translateY(100px);
+    transform: rotateX(90deg) translateY(100px);
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    -o-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+.container .cube-wrap .cube .front {
+    -webkit-transform: translateZ(100px);
+    -moz-transform: translateZ(100px);
+    -o-transform: translateZ(100px);
+    -ms-transform: translateZ(100px);
+    transform: translateZ(100px);
+}
+
+
+/*魔方各个面的样式*/
+
+.container .cube-wrap .cube .pane div {
+    height: 66px;
+    width: 66px;
+    margin: 0;
+    padding: 0;
+    border: 2px solid rgba(0, 0, 0, .9);
+    border-radius: 5px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container .cube-wrap .cube .pane div:nth-child(1) {
+    background-color: rgba(217, 0, 8, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(2) {
+    background-color: rgba(252, 139, 11, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(3) {
+    background-color: rgba(253, 255, 1, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(4) {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(5) {
+    background-color: rgba(0, 158, 66, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(6) {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(7) {
+    background-color: rgba(0, 75, 115, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(8) {
+    background-color: rgba(253, 255, 1, 1);
+}
+
+.container .cube-wrap .cube .pane div:nth-child(9) {
+    background-color: rgba(0, 158, 66, 1);
+}
