@@ -8,4 +8,4 @@ README
 
 ===========================
 ###演示动画
-![](https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif)
+![](https://github.com/LUOrenjia/3D-Cube/blob/master/3dCube.gif)
